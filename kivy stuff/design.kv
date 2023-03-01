@@ -1,0 +1,153 @@
+<body>
+    face1 : Face1
+    roll : Roll
+    slider : Slider
+    main : Main
+    face2 : Face2
+    face3 : Face3
+    face4 : Face4
+    face5 : Face5
+    num_die : num_die
+    
+
+    BoxLayout:
+        id: Main
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            font_size:32
+            text:"Welcome to Dice roller..."
+            color: (1,1,1,1)
+            canvas.before:
+                Color:
+                    rgba:(30/255, 30/255, 30/255,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        Button:
+            id: Roll
+            text:"Roll"
+            on_press: root.rolling()
+
+
+        Label:
+            id: num_die
+            text: "Number of Dice in use: 1"
+            font_size: 20
+            color: (1,1,1,1)
+            canvas.before:
+                Color:
+                    rgba:(30/255, 30/255, 30/255,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+
+        Slider:
+            id: Slider
+            min: 1
+            max: 5 
+            step: 1
+            on_value: root.sliding(*args) and root.desliding()
+            orientation: "horizontal"
+            background_color:(0.5,0.5,0.5,1)
+        
+        BoxLayout:
+            size: root.width, root.height
+            id:boxint
+            orientation:"horizontal"
+            Label:
+                text: "Dice1"
+
+                font_size: 20
+                color: (1,1,1,1)
+                canvas.before:
+                    Color:
+                        rgba:(30/255, 30/255, 30/255,1)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text: "Dice2"
+
+                font_size: 20
+                color: (1,1,1,1)
+                canvas.before:
+                    Color:
+                        rgba:(30/255, 30/255, 30/255,1)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text: "Dice3"
+
+                font_size: 20
+                color: (1,1,1,1)
+                canvas.before:
+                    Color:
+                        rgba:(30/255, 30/255, 30/255,1)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text: "Dice4"
+
+                font_size: 20
+                color: (1,1,1,1)
+                canvas.before:
+                    Color:
+                        rgba:(30/255, 30/255, 30/255,1)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text: "Dice5"
+
+                font_size: 20
+                color: (1,1,1,1)
+                canvas.before:
+                    Color:
+                        rgba:(30/255, 30/255, 30/255,1)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+        Label:
+        BoxLayout:
+            size: root.width, root.height
+            id:boxint
+            orientation:"horizontal"
+            Image:
+                id: Face1
+                source: "kivy stuff/1.png"
+                keep_ratio: True
+                size_hint: (None,None)
+                size: (200,200)
+            Image:
+                id: Face2
+                source: ""
+                keep_ratio: True
+                size_hint: (None,None)
+                size: (200,200)
+            Image:
+                id: Face3
+                source: ""
+                keep_ratio: True
+                size_hint: (None,None)
+                size: (200,200)
+            Image:
+                id: Face4
+                source: ""
+                keep_ratio: True
+                size_hint: (None,None)
+                size: (200,200)
+            Image:
+                id: Face5
+                source: ""
+                keep_ratio: True
+                size_hint: (None,None)
+                size: (200,200)
+
+
+
+
