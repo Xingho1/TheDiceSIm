@@ -6,7 +6,7 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 
 
-Builder.load_file("kivy stuff\design.kv")
+Builder.load_file("kivy stuff/design.kv")
 Window.size = (999,635)
 
 

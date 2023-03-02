@@ -15,8 +15,8 @@ while True:
         print(functions.roll())
     elif command == 'config':
         number_of_dice = input("Enter the number of dice you want to include:")
-        if number_of_dice.isnumeric() == True : 
-            result = functions.config(number_of_dice)
+        if number_of_dice.isnumeric() is True :
+            functions.config(number_of_dice)
         else:
             print("Not numeric.")
     elif command == 'quit':
