@@ -3,6 +3,7 @@
 This is able to roll a dice with the limit of 5 dice in gui format.
 
 This project is divided into 3 instance:
+
 I) It is a module format for the dice.
 
 II) It is the textual version for the basic program without gui.
