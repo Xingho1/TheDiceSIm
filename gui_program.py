@@ -11,24 +11,32 @@ Window.size = (999,635)
 
 
 class body(Widget):
+    current_val = 1 
 
-    # def desliding(self):
-    #     l = [self.face1, self.face2, self.face3, self.face4, self.face5]
-    #     if functions.num_dice < f:
-    #         for n, t in zip(range(f,f-2,-1), l.reverse()):
-    #             t.source = ""
-    #             f -= 1
+    def function_check(self,*args):
+        if args[1] < self.current_val:
+            self.desliding(args[1])
+        elif args[1] > self.current_val:
+            self.sliding(args[1])
+    
 
-    def sliding(self,*args):
-        global f
-        f = 0
-        functions.config(int(args[1]))
-        #self.add_widget(Image(source= "kivy stuff/1.png", keep_ratio= True, size_hint= (None, None) size= (200, 200),pos_hint= {"center_x": 0.5}))
+    def desliding(self,x):
+
+        functions.config(int(x))
         l = [self.face1, self.face2, self.face3, self.face4, self.face5]
-        if functions.num_dice > 1:
-            for n,t in zip(range(1,functions.num_dice+1),l):
-                t.source = "kivy stuff/1.png"
-                f += 1
+        if functions.num_dice < 5:
+            self.current_val = functions.num_dice
+            l[x].source = ""
+        self.num_die.text = "Number of Dice in use: {}".format(functions.num_dice)
+        
+
+    def sliding(self,x):
+        
+        functions.config(int(x))
+        l = [self.face1, self.face2, self.face3, self.face4, self.face5]
+        if functions.num_dice <= 5:
+            self.current_val = functions.num_dice
+            l[x-1].source = "kivy stuff/1.png"
         self.num_die.text = "Number of Dice in use: {}".format(functions.num_dice)
             
     
